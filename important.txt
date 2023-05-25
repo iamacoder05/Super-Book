@@ -1,0 +1,9 @@
+super-book (workspace)
+yarn create react-app super-book
+cd super-book
+mkdir dashboard
+cd dashboard
+yarn init -y
+yarn add react react-dom
+new file index.js in dashboard
+yarn start

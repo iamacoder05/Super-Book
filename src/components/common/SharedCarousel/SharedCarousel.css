@@ -1,0 +1,11 @@
+.shared-carousel .carousel-indicators li {
+    background-color: #999; /* Inactive bullet color */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .shared-carousel .carousel-indicators .active {
+    background-color: #333; /* Active bullet color */
+  }
+  
