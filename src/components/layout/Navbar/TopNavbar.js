@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
-import styles from "./TopNavbar.module.css";
-import { Navbar, Nav, Button} from 'react-bootstrap';
+import "./TopNavbar.css";
+import { Navbar, Nav, Button, Container} from 'react-bootstrap';
 import Login from "../../../pages/Login/Login";
 import Registration from "../../../pages/Registration/Registration";
 
@@ -73,7 +73,7 @@ function TopNavbar() {
         </div>
       </div>  */}
 
-<div className={`container-fluid d-sm-none  ${styles["custom-container"]}`} >
+<div className="d-sm-none custom-container" >
 <MobileMenuView activeOption="home" />
     
   </div>

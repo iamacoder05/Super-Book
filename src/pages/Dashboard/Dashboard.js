@@ -3,7 +3,7 @@ import TopNavbar from '../../components/layout/Navbar/TopNavbar';
 import SharedCarousel from '../../components/common/SharedCarousel/SharedCarousel';
 
 // import { Button } from '../../shared/components/Button/Button';
-import styles from './Dashboard.module.css';
+import './Dashboard.css';
 import MobileMenuView from '../../components/layout/MobileMenu/MobileMenuView';
 function Dashboard() {
   return (
@@ -11,11 +11,15 @@ function Dashboard() {
 
       {/* <Header /> */}
       <TopNavbar />
+      <div className='dashboard-content'>
+
       <SharedCarousel />
+      <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
+    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
+    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
+      </div>
     {/* <MobileMenuView /> */}
-    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
-    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
-    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
+
       {/* <Button label="View Account History" link="/account-history" /> */}
     </div>
   );

@@ -18,10 +18,14 @@
 
 .custom-container{
     /* background-color: red; */
-    position: relative;
+    /* position: relative; */
 }
 
 .custom-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     
     /* position: absolute;
     top: 0;
