@@ -16,10 +16,10 @@
     height: 50px;
 } */
 
-.custom-container{
-    /* background-color: red; */
-    /* position: relative; */
-}
+/* .custom-container{
+    background-color: red; */
+    /* position: relative;
+} */
 
 .custom-container{
     position: fixed;
@@ -56,4 +56,14 @@
     transform-origin: bottom left; 
   } */
 
-  
+  .custom-navbar{
+    background-color: #f9f8fa;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  .custom-navbar .nav-link{
+    font-size: 14px;
+  }
+  .nav-icons{
+    width: 23px;
+    height: 23px;
+  }

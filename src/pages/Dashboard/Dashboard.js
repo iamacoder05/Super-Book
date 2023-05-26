@@ -5,22 +5,19 @@ import SharedCarousel from '../../components/common/SharedCarousel/SharedCarouse
 // import { Button } from '../../shared/components/Button/Button';
 import './Dashboard.css';
 import MobileMenuView from '../../components/layout/MobileMenu/MobileMenuView';
+import Casino from '../navbar-options/casino/Casino';
+
 function Dashboard() {
   return (
     <div className="dashboard">
-
-      {/* <Header /> */}
       <TopNavbar />
       <div className='dashboard-content'>
-
       <SharedCarousel />
-      <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
-    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
-    <div style={{backgroundColor:"red",width:"100%"}}>hi</div>
+     {/* <Casino/> */}
       </div>
-    {/* <MobileMenuView /> */}
-
-      {/* <Button label="View Account History" link="/account-history" /> */}
+    
+     
+      
     </div>
   );
 }

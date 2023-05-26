@@ -6,6 +6,12 @@ import Login from "../../../pages/Login/Login";
 import Registration from "../../../pages/Registration/Registration";
 
 import MobileMenuView from "../MobileMenu/MobileMenuView";
+
+import ExchangeSvg from "../../common/Icons/ExchangeSvg";
+import SportsSvg from '../../common/Icons/SportsSvg';
+import ProfileSvg from '../../common/Icons/ProfileSvg';
+import CasinoSvg from '../../common/Icons/CasinoSvg';
+import PromotionSvg from '../../common/Icons/PromotionSvg';
 function TopNavbar() {
 
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -23,15 +29,22 @@ function TopNavbar() {
     return (
     <div>
 
-<Navbar bg="light" expand="sm">
+<Navbar expand="sm" className="custom-navbar">
       <div className="container-fluid">
         <Navbar.Brand href="#">Super Book</Navbar.Brand>
 
-        <div className="d-none d-sm-block">
+        <div className="d-none d-md-block">
           <Nav className="me-auto">
-            <Nav.Link href="#">Option 1</Nav.Link>
-            <Nav.Link href="#">Option 2</Nav.Link>
-            <Nav.Link href="#">Option 3</Nav.Link>
+          <ExchangeSvg className="nav-icons" />
+            <Nav.Link className="nav-element-text" as={Link} to="/casino">Exchange</Nav.Link>
+            <SportsSvg className="nav-icons"/>
+            <Nav.Link className="nav-element-text" href="#">Sports</Nav.Link>
+            <ProfileSvg className="nav-icons" />
+            <Nav.Link className="nav-element-text" href="#">Profile</Nav.Link>
+            <CasinoSvg className="nav-icons animated-casino" />
+            <Nav.Link className="nav-element-text" href="#">Casino</Nav.Link>
+            <PromotionSvg className="nav-icons" />
+            <Nav.Link className="nav-element-text" href="#">Promotion</Nav.Link>
           </Nav>
         </div>
 
@@ -73,20 +86,12 @@ function TopNavbar() {
         </div>
       </div>  */}
 
-<div className="d-sm-none custom-container" >
+<div className="d-md-none custom-container" >
 <MobileMenuView activeOption="home" />
     
   </div>
 
-       
-
     </div>
-  
-
-
-    
-
-
 
   );
 }
