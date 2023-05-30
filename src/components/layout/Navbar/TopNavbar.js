@@ -24,6 +24,12 @@ function TopNavbar() {
     setShowRegisterModal(true);}
   const handleCloseRegisterModal = () => setShowRegisterModal(false);
 
+  const [activeLink, setActiveLink] = useState('');
+
+  const handleNavItemClick = (link) => {
+    setActiveLink(link);
+  };
+
 
 
     return (
@@ -35,16 +41,39 @@ function TopNavbar() {
 
         <div className="d-none d-md-block">
           <Nav className="me-auto">
+            <Nav.Link className={`nav-element-text me-2 ${activeLink === 'exchange' ? 'active' : ''}`} as={Link} to="/casino" onClick={() => handleNavItemClick('exchange')}>
+            {activeLink === 'exchange' && (
           <ExchangeSvg className="nav-icons" />
-            <Nav.Link className="nav-element-text" as={Link} to="/casino">Exchange</Nav.Link>
-            <SportsSvg className="nav-icons"/>
-            <Nav.Link className="nav-element-text" href="#">Sports</Nav.Link>
-            <ProfileSvg className="nav-icons" />
-            <Nav.Link className="nav-element-text" href="#">Profile</Nav.Link>
-            <CasinoSvg className="nav-icons animated-casino" />
-            <Nav.Link className="nav-element-text" href="#">Casino</Nav.Link>
-            <PromotionSvg className="nav-icons" />
-            <Nav.Link className="nav-element-text" href="#">Promotion</Nav.Link>
+    )}
+    Exchange</Nav.Link>
+            {/* </div> */}
+            
+ 
+            
+            <Nav.Link className={`nav-element-text me-2 ${activeLink === 'sports' ? 'active' : ''}`}  onClick={() => handleNavItemClick('sports')}>
+            {activeLink === 'sports' && (
+         <SportsSvg className="nav-icons"/>
+    )}Sports</Nav.Link>
+
+   
+            <Nav.Link className={`nav-element-text me-2 ${activeLink === 'profile' ? 'active' : ''}`} onClick={() => handleNavItemClick('profile')}>
+            {activeLink === 'profile' && (
+      <ProfileSvg className="nav-icons" />
+    )}Profile</Nav.Link>
+
+    
+           
+            <Nav.Link className= {`nav-element-text me-2 ${activeLink === 'casino' ? 'active' : ''}`} onClick={() => handleNavItemClick('casino')}>
+            {activeLink === 'casino' && (
+       <CasinoSvg className="nav-icons animated-casino"  />
+    )}Casino</Nav.Link>
+      
+            <Nav.Link className={`nav-element-text me-2 ${activeLink === 'promotion' ? 'active' : ''}`} onClick={() => handleNavItemClick('promotion')}>
+            {activeLink === 'promotion' && (
+      <PromotionSvg className="nav-icons" />
+    )}
+           Promotion
+           </Nav.Link>
           </Nav>
         </div>
 

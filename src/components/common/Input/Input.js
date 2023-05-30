@@ -101,7 +101,7 @@ function Input(props) {
     if (type === 'tel') {
       return (
         <div>
-        <div className="input-field">
+        <div className="input-field mb-3">
           <div className='icon-image'  onClick={handleFlagClick} >
           <img src={getFlagImage(countryCode)} alt={countryCode}className='active-icon' />
           <img src={dropDownIcon} className='drop-down-icon' alt="hi"/>

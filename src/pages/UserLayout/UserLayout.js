@@ -3,11 +3,10 @@ import TopNavbar from '../../components/layout/Navbar/TopNavbar';
 import SharedCarousel from '../../components/common/SharedCarousel/SharedCarousel';
 
 // import { Button } from '../../shared/components/Button/Button';
-import './Dashboard.css';
-import MobileMenuView from '../../components/layout/MobileMenu/MobileMenuView';
-import Casino from '../navbar-options/casino/Casino';
+import './UserLayout.css';
 
-function Dashboard() {
+
+function UserLayout() {
   return (
     <div className="dashboard">
       <TopNavbar />
@@ -22,4 +21,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default UserLayout;
