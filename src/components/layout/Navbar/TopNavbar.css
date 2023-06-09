@@ -85,3 +85,18 @@
 
 
   }
+
+  .navbar-nav .dropdown-menu{
+    right: 0px !important;
+    left: auto !important;
+    margin-top: 14px !important;
+  }
+
+  .dropdown-link{
+    text-decoration: none;
+    color: black;
+  }
+  .logo{
+    width: 120px;
+    height: 55px;
+  }

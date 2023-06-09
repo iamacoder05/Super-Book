@@ -6,6 +6,8 @@ import SportsSvg from '../../common/Icons/SportsSvg';
 import ProfileSvg from '../../common/Icons/ProfileSvg';
 import CasinoSvg from '../../common/Icons/CasinoSvg';
 import PromotionSvg from '../../common/Icons/PromotionSvg';
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 function MobileMenuView() {
   // const [activeOption, setActiveOption] = useState(null);
 
@@ -14,7 +16,10 @@ function MobileMenuView() {
   // };
 
   const [activeTab, setActiveTab] = useState('home');
-  
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  let userIsLoggedIn=localStorage.getItem("isUserLoggedIn")
+  let loggedInUser=localStorage.getItem("loggedInUser")
+  let navigate = useNavigate();
 
   const handleTabClick = (tab) => {
     if (tab === activeTab) {
@@ -22,6 +27,18 @@ function MobileMenuView() {
     }
     setActiveTab(tab);
   };
+
+  const handleProfileClick = () => {
+    setDropdownVisible(!dropdownVisible);
+    // navigate('/login')
+  };
+  
+  const signOut =() => {
+    localStorage.clear()
+    navigate('/')
+  }
+
+
   
 
   return (
@@ -48,7 +65,7 @@ function MobileMenuView() {
     //   </div>
     // </div>
 
-    
+    <>
     <div className="tabbar tab-style1">
       <ul className="flex-center">
         <li
@@ -71,16 +88,19 @@ function MobileMenuView() {
 <SportsSvg className="icons"/>
           <span className='element-text'>Sports</span>
         </li>
+       
         <li
           className={`services ${activeTab === 'services' ? 'active' : ''}`}
       
-          onClick={() => handleTabClick('services')}
+          onClick={() => {handleProfileClick();}}
         >
       
 <ProfileSvg className="icons" />
            <span className='element-text'>Profile</span>
+           
         </li>
-        <li
+
+        <li 
           className={`about ${activeTab === 'about' ? 'active' : ''}`}
          
           onClick={() => handleTabClick('about')}
@@ -100,7 +120,24 @@ function MobileMenuView() {
         {/* <li className="follow"></li> */}
         
       </ul>
+      {userIsLoggedIn &&dropdownVisible && (
+            <div className="custom-dropdown-menu">
+               <span className= "close" onClick={handleProfileClick}>close</span>
+               <div className='user'>
+               Hello, {loggedInUser}
+                <Link to="/user-profile">User Profile</Link>
+                <Link to="/account-statement">Account Statement</Link>
+              <Link to="/withdraw">Withdraw</Link>
+              <Link to="/transaction-history">Transaction History</Link>
+              <Link to="/open-bets">Open Bets</Link>
+              <Link onClick={signOut}>Sign Out</Link>
+             </div>
+            </div>
+           )}
+
     </div>
+    {/* {showLoginModal && <Login show={showLoginModal} onClose={handleCloseLoginModal} onRegisterClick={handleShowRegisterModal} />} */}
+    </>
   
   );
 }

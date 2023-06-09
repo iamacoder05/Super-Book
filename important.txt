@@ -7,3 +7,6 @@ yarn init -y
 yarn add react react-dom
 new file index.js in dashboard
 yarn start
+--
+create react-admin-panel using react-admin-panel
+

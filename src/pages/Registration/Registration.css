@@ -1,0 +1,37 @@
+/* Registration.css */
+.otp-container {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    align-items: center !important;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .otp-input {
+    width: 24px!important;
+    height: 28px;
+    font-size: 14px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    /* text-align: center; */
+  }
+
+  .resend-button{
+    display: flex; 
+    flex-direction: row-reverse;
+  }
+  .center-item{
+    display: flex;
+    justify-content: center;
+  }
+  
+.member{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}

@@ -4,6 +4,7 @@ import SharedCarousel from '../../components/common/SharedCarousel/SharedCarouse
 
 // import { Button } from '../../shared/components/Button/Button';
 import './UserLayout.css';
+import Footer from '../../components/layout/Footer/Footer';
 
 
 function UserLayout() {
@@ -14,10 +15,12 @@ function UserLayout() {
       <SharedCarousel />
      {/* <Casino/> */}
       </div>
+     
     
      
       
     </div>
+    
   );
 }
 

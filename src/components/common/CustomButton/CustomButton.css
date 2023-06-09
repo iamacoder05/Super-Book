@@ -1,0 +1,26 @@
+.custom-primary-button{
+    font-weight: 500 !important;
+    width: 100%;
+    box-shadow: 3px 3px 3px 0px #b8b8b8;
+    border-radius: 20px !important;
+    background-color: red !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+    /* background: rgb(255,0,0) !important;
+background: linear-gradient(90deg, rgba(255,0,0,0.9467436632856268) 0%, rgba(184,184,184,1) 85%) !important; */
+
+}
+.custom-secondary-button{
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    box-shadow: 3px 3px 3px 0px #b8b8b8;
+    /* border-radius: 20px !important; */
+    background-color: #fa2929 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+}
+.custom-link-button{
+    text-decoration: none !important;
+    padding: 0 !important;
+    vertical-align: unset !important;
+}

@@ -1,6 +1,6 @@
 .custom-form-control {
     border:0 !important;
-    padding: 20px 0 0 10px !important;
+    padding: 10px 0 0 10px !important;
   }
 
   .input-field {
@@ -84,6 +84,7 @@
     top: 0;
     left: 10px;
     margin-bottom: 5px;
+    font-size: 14px;
     
   }
   .icon-image{

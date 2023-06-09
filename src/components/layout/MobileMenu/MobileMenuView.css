@@ -282,3 +282,39 @@
 }
 
 
+
+.custom-dropdown-menu{
+  position: absolute;
+  /* top: -197px; */
+  bottom: -8px;
+  margin: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+
+ 
+  width: 100%;
+  z-index: 200;
+}
+
+
+.custom-dropdown-menu .user a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.custom-dropdown-menu .user a:hover {
+  background-color: #ccc;
+}
+.close{
+  position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+.custom-dropdown-menu .user{
+  margin-top: 20px;
+  margin-bottom: 90px;
+}
+

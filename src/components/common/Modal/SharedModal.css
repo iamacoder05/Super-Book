@@ -1,0 +1,19 @@
+/* .custom-modal {
+   @media (max-width: 991px) {
+     .modal-dialog {
+       max-width: 90%;
+     }
+   }
+ }
+ 
+  */
+  .custom-modal.modal-bottom .modal-dialog {
+   margin: 0;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   transform: translate(0, 0);
+ }
+ 
+ 

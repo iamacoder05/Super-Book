@@ -1,0 +1,14 @@
+.scrollable-tabs-container {
+    width: 100%; 
+    overflow-x: auto; 
+    overflow: scroll hidden;
+  }
+
+  .scrollable-tabs-container::-webkit-scrollbar{
+    width: 0 !important;
+  }
+  .scrollable-tabs {
+    white-space: nowrap;
+    flex-wrap: nowrap !important;
+  }
+  

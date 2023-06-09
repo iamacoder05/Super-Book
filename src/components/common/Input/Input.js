@@ -8,12 +8,14 @@ import dropDownIcon from '../../../assets/flags/down-arrow.png';
 import './Input.css';
 
 function Input(props) {
-  const { label, type, value, onChange, placeholder, isInvalid, errorMessage, onBlur, passwordRequirements} = props;
+  const { label, type, value, onChange, placeholder, isInvalid, errorMessage, onBlur, passwordRequirements,handleCountryCode} = props;
 
 
   const [countryCode, setCountryCode] = useState('in');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -44,17 +46,17 @@ function Input(props) {
     {
       code: 'in',
       name: 'India',
-      dialCode: '91',
+      dialCode: '+91',
     },
     {
       code: 'lk',
       name: 'Sri Lanka',
-      dialCode: '94',
+      dialCode: '+94',
     },
     {
       code: 'bd',
       name: 'Bangladesh',
-      dialCode: '880',
+      dialCode: '+880',
     },
     // Add more country objects as needed
   ];
@@ -63,8 +65,9 @@ function Input(props) {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const handleCountrySelect = (code) => {
+  const handleCountrySelect = (code,dialCode) => {
     setCountryCode(code);
+    handleCountryCode(dialCode);
     setDropdownOpen(false);
   };
 
@@ -103,7 +106,7 @@ function Input(props) {
         <div>
         <div className="input-field mb-3">
           <div className='icon-image'  onClick={handleFlagClick} >
-          <img src={getFlagImage(countryCode)} alt={countryCode}className='active-icon' />
+          <img src={getFlagImage(countryCode)} alt={countryCode} className='active-icon' />
           <img src={dropDownIcon} className='drop-down-icon' alt="hi"/>
           </div>
           <Form.Control
@@ -119,9 +122,9 @@ function Input(props) {
           {dropdownOpen && (
             <div className="country-options">
               {countriesData.map((country) => (
-                <div key={country.code} onClick={() => handleCountrySelect(country.code)}>
+                <div key={country.code} onClick={() => handleCountrySelect(country.code,country.dialCode)}>
                   <img src={getFlagImage(country.code)} alt={country.code} />
-                  {`${country.name} (+${country.dialCode})`}
+                  {`${country.name} (${country.dialCode})`}
                 </div>
               ))}
             </div>

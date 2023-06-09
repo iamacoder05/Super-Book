@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import SharedModal from '../../components/common/Modal/SharedModal';
 import Input from '../../components/common/Input/Input';
-import { Form, Button } from 'react-bootstrap';
-import Registration from '../Registration/Registration';
-import styles from '../../pages/Login/Login.module.css';
-import { Link } from 'react-router-dom';
+import {  Container, Row, Col, Form, Button } from 'react-bootstrap';
+import CustomButton from '../../components/common/CustomButton/CustomButon';
+import axios from 'axios';
+
+
 
 function Login({show ,onClose, onRegisterClick }) {
   // const [showModal, setShowModal] = useState(false);
@@ -41,59 +42,55 @@ function Login({show ,onClose, onRegisterClick }) {
     setRegistrationShowModal(false);
   }
 
-  function handleLogin() {
+  async function handleLogin(e) {
     // TODO: Implement login logic
+    console.log("login")
+    e.preventDefault();
+
+   
+    let body={
+      username:userName,
+      password:password
+    }
+    const response = await axios.post('http://localhost:3000/login',body);
+    onClose();
+    if(response.data.statusCode){
+      localStorage.setItem("isUserLoggedIn",true)
+      localStorage.setItem("loggedInUser",userName)
+    }
+    console.log(body,response.data)
   }
 
 
 
 
   return (
-    <div>
-      {/* <Button variant="primary" onClick={handleShowModal}>Login</Button> */}
-      {/* <SharedModal isOpen={props.isOpen} onClose={props.onClose}>
-      <div className="d-flex">
-        <div className="w-50 mb-5"> 
-        <h1>Login</h1>
-        <Form onSubmit={handleLogin}>
-        <Input type="text" value={userName} placeholder = "Enter your Username" onChange={handleUserNameChange} />
-        <Input  type="password" value={password} placeholder = "Enter your Password" onChange={handlePasswordChange} />
-        <Button type="submit" variant="primary">Login</Button>
-      </Form>
-      <p>Don't have an account?
-      <Button variant="primary" onClick={handleRegistrationShowModal}>Register</Button>
-      <Registration isOpen={showRegistrationModal} onClose={handleRegistratiionCloseModal} />
-        <button variant="link" onClick={handRegistrationClick}>Register here</button>
-        </p>
-      </div>
-        <div className="w-50">This is box 2</div>
-      </div>
-      </SharedModal> */}
-
+    <>
+  
 
       <SharedModal show={show} onClose={onClose}>
-      <div className="d-flex">
-        <div className="w-50 mb-5"> 
+      <Container>
+      <Row>
+      <Col md={6} className="mb-5"> 
         <h1>Login</h1>
         <Form onSubmit={handleLogin}>
         <Input type="text" value={userName} placeholder = "Enter your Username" onChange={handleUserNameChange} />
         <Input  type="password" value={password} placeholder = "Enter your Password" onChange={handlePasswordChange} />
-        <Button type="submit" variant="primary">Login</Button>
+        <CustomButton type="submit" variant="primary" className="custom-primary-button">Login</CustomButton>
       </Form>
+      <div className='member mt-2'>  Already have an account?
+      <CustomButton variant="link" className="custom-link-button" onClick={onRegisterClick}> 
+      Register   
+        </CustomButton>
+        </div>
+        </Col>
       
-      <Button variant="link" onClick={onRegisterClick}> 
-      Don't have an account? Register   
-        </Button>
-      {/* <Button variant="primary" onClick={handleRegistrationShowModal}>Register</Button>
-      <Registration isOpen={showRegistrationModal} onClose={handleRegistratiionCloseModal} /> */}
-        {/* <button variant="link" onClick={handRegistrationClick}>Register here</button> */}
-        
-      </div>
-        <div className="w-50">This is box 2</div>
-      </div>
+        <Col md={6} className="d-none d-md-block">This is box 2</Col>
+      </Row>
+      </Container>
       </SharedModal>
 
-    </div>
+    </>
   );
 }
 

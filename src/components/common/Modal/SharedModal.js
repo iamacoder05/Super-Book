@@ -1,7 +1,8 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import styles from "./SharedModal.module.css"
-function SharedModal({ show, onClose, children }) {
+import "./SharedModal.css";
+import logo from '../../../assets/logo/SUPERBOOK.png';
+function SharedModal({ show, onClose, children,centered }) {
   // if (!isOpen) {
   //   return null;
   // }
@@ -33,9 +34,11 @@ function SharedModal({ show, onClose, children }) {
       </Modal.Body>
     </Modal> */}
 
-    <Modal size="lg" show={show} onHide={onClose} centered className={styles["custom-modal"]}>
+    <Modal size='xl' show={show} onHide={onClose} centered className="custom-modal ">
       <Modal.Header closeButton className="justify-content-center border-0">
-        <Modal.Title className="text-center w-100">Super Book</Modal.Title>
+        <Modal.Title className="text-center w-100">
+          <img src={logo} />
+          </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {children}
